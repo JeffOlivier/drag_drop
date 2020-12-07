@@ -1,7 +1,7 @@
-##If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, but in one place, this is the tool for you.##
+## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, but in one place, this is the tool for you.
 
-**Green:** icons that have been set up with a title and URL and are live on your site
-**Red:** icons that have NOT been set up with either a title or URL or both
+**Green:** icons that have been set up with a title and URL and are live on your site<br>
+**Red:** icons that have NOT been set up with either a title or URL or both<br>
 **Blue:** icons that have been set up with a title and URL but are NOT currently being used on your site
 
 The **_edit_** button (icon located in the upper right hand corner of each large icon) lets you edit the social media information of each icon : the URL to your social media site (eg. FB, Insta, ect) and title of the icon.
@@ -15,18 +15,17 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ---
 
-###If you want to integrate this with a database, the below info will get you started###
+### If you want to integrate this with a database, the below info will get you started
 
 ---
 
-** DATABASE TABLES **
+## DATABASE TABLES
 
 ---
 
-###social_media_type###
+### social_media_type
+
 [all social media types available]
-
----
 
     id - SMALLINT(6) (primary key)
     name - char(100) (unique key)
@@ -43,84 +42,85 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
     Twitter		fa-twitter-square		fab fa-aetw
     YouTube		fa-youtube-square		fab fa-aeyt
 
-###social_media###
+### social_media
+
 [this table determins what icons are shown on what website]
 
 ---
 
-id - INT (primary key, auto increment)
-siteCode - CHAR(5) [code representing which site this SM icon belongs on]
-typeId - SMALLINT(6) (primary key) [maps to the table social_media_type column id]
-title - VARCHAR(150) [title on social media icon]
-url - VARCHAR(255) [URL to your specific SM page eg. www.facebook.com/myCompany ]
-iconrder - TINYINT(4) [the order placement of this SM icon]
+    id - INT (primary key, auto increment)
+    siteCode - CHAR(5) [code representing which site this SM icon belongs on]
+    typeId - SMALLINT(6) (primary key) [maps to the table social_media_type column id]
+    title - VARCHAR(150) [title on social media icon]
+    url - VARCHAR(255) [URL to your specific SM page eg. www.facebook.com/myCompany ]
+    iconrder - TINYINT(4) [the order placement of this SM icon]
 
-- unique key = (siteCode, typeId)
+    -> **unique key = (siteCode, typeId)**
 
-###social_media_change_log###
+### social_media_change_log
+
 [logs all changes to the social_media table and by whom]
 
 ---
 
-id - INT (primary key, auto increment)
-timestamp - DATETIME [date of the change]
-username - VARCHAR(100) [person who made the change]
-social_media_id - INT [maps to the table social_media column id]
-dbField - VARCHAR(50) [field from table social_media that was changed]
-oldData - VARCHAR(255) [original value]
-newData - VARCHAR(255) [new value]
+    id - INT (primary key, auto increment)
+    timestamp - DATETIME [date of the change]
+    username - VARCHAR(100) [person who made the change]
+    social_media_id - INT [maps to the table social_media column id]
+    dbField - VARCHAR(50) [field from table social_media that was changed]
+    oldData - VARCHAR(255) [original value]
+    newData - VARCHAR(255) [new value]
 
 ---
 
-** QUERY EXAMPLES **
+# QUERY EXAMPLES
 
 ---
 
-Get all active icons for the site 'foo' (eg. the icons currently shown on the website)
+## Get all active icons for the site 'foo' (eg. the icons currently shown on the website)
+
 **_note:_** _an icon order of zero indicates that it exists, but isn't shown on the website_
 
----
-
-> SELECT id
-> FROM social_media
-> WHERE sitecode = 'foo' AND iconOrder != 0
+> SELECT id<br>
+> FROM social_media<br>
+> WHERE sitecode = 'foo' AND iconOrder != 0<br>
 > ORDER BY iconOrder DESC
 
 OR
 
-> SELECT typeId, title, url, iconOrder, name
-> FROM social_media AS a
-> JOIN social_media_type AS b ON b.id = a.typeId
-> WHERE siteCode = 'foo' AND iconOrder != 0
+> SELECT typeId, title, url, iconOrder, name<br>
+> FROM social_media AS a<br>
+> JOIN social_media_type AS b ON b.id = a.typeId<br>
+> WHERE siteCode = 'foo' AND iconOrder != 0<br>
 > ORDER BY iconOrder ASC
 
 ## Get all available social media icon types
 
-SELECT id
-FROM social_media_type
-WHERE isGlobal = true
-ORDER BY id ASC
+> SELECT id<br>
+> FROM social_media_type<br>
+> WHERE isGlobal = true<br>
+> ORDER BY id ASC
 
 ## Get all of the information for a SINGLE social media icon on the site 'foo'
 
-SELECT \*
-FROM social_media
-WHERE siteCode = 'foo' AND typeId = 56
+> SELECT \*<br>
+> FROM social_media<br>
+> WHERE siteCode = 'foo' AND typeId = 56
 
 ## Get all information for a single social media icon type
 
-SELECT \*
-FROM social_media_type
-WHERE id = 3
+> SELECT \*<br>
+> FROM social_media_type<br>
+> WHERE id = 3
 
 ## Get the social media icon image code
 
-SELECT fa5icon as image_code
-FROM social_media_types
-WHERE id = 3
+> SELECT fa5icon as image_code<br>
+> FROM social_media_types<br>
+> WHERE id = 3
 
 ## Get the name of a social media icon (eg. facebook, instagram, etc.)
 
-SELECT name
-FROM social_media_type
-WHERE id = 3
+> SELECT name<br>
+> FROM social_media_type<br>
+> WHERE id = 3
