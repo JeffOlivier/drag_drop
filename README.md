@@ -1,6 +1,6 @@
 ## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, then this is the tool for you.
 
-**This tool is built using _JavaScript ES6_, _jQuery_, and _SASS_.**
+_This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._
 
 **Green:** icons that have been set up with a title and URL and are live on your site<br>
 **Red:** icons that have NOT been set up with either a title or URL or both<br>
@@ -17,13 +17,13 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ---
 
-### If you want to integrate this with a database, the below info will get you started
+### If you want to integrate this with a database, then the below information will get you started
 
 ## DATABASE TABLES
 
 ### social_media_type
 
-[all social media types available]
+[this table contains all of the social media types that are available]
 
     id - SMALLINT(6) (primary key)
     name - char(100) (unique key)
@@ -55,7 +55,7 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ### social_media_change_log
 
-[logs all changes to the social_media table and by whom]
+[this table logs all changes to the social_media table and by whom]
 
     id - INT (primary key, auto increment)
     timestamp - DATETIME [date of the change]
@@ -65,11 +65,13 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
     oldData - VARCHAR(255) [original value]
     newData - VARCHAR(255) [new value]
 
+---
+
 # QUERY EXAMPLES
 
 ---
 
-### Get all active icons for the site 'foo' (eg. the icons currently shown on the website)
+### Get all of the active icons for the site named 'foo' (eg. the icons currently being shown on the website)
 
 **_note:_** _an icon order of zero indicates that it exists, but isn't shown on the website_
 
@@ -86,26 +88,26 @@ OR
 > WHERE siteCode = 'foo' AND iconOrder != 0<br>
 > ORDER BY iconOrder ASC
 
-### Get all available social media icon types
+### Get all of the available social media icon types
 
 > SELECT id<br>
 > FROM social_media_type<br>
 > WHERE isGlobal = true<br>
 > ORDER BY id ASC
 
-### Get all of the information for a SINGLE social media icon on the site 'foo'
+### Get all of the information for a _SINGLE_ social media icon on the site named 'foo'
 
 > SELECT \*<br>
 > FROM social_media<br>
 > WHERE siteCode = 'foo' AND typeId = 56
 
-### Get all information for a single social media icon type
+### Get all of the information for a single social media icon type
 
 > SELECT \*<br>
 > FROM social_media_type<br>
 > WHERE id = 3
 
-### Get the social media icon image code
+### Get the URL for the social media icon image
 
 > SELECT fa5icon as image_code<br>
 > FROM social_media_types<br>
