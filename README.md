@@ -31,14 +31,14 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
     fa5icon - VARCHAR(100) [font awesome ver 5 icon code]
     isGlobal - TINYINT(1) [T = show on all sites, F = specific to certain site(s) ]
 
-    name		fa4icon					fa5icon
-    ------------------------------------------------
-    Facebook	fa-facebook-square		fab fa-aefb
-    Google+		fa-google-plus-square	fab fa-aegp
-    Instagram	fa-instagram			fab fa-aeig
-    Pinterest	fa-pinterest-square		fab fa-aept
-    Twitter		fa-twitter-square		fab fa-aetw
-    YouTube		fa-youtube-square		fab fa-aeyt
+    name | fa4icon | fa5icon
+    ------------|-----------------------|-------------
+    Facebook	| fa-facebook-square	| fab fa-aefb
+    Google+		| fa-google-plus-square	| fab fa-aegp
+    Instagram	| fa-instagram			| fab fa-aeig
+    Pinterest	| fa-pinterest-square	| fab fa-aept
+    Twitter		| fa-twitter-square		| fab fa-aetw
+    YouTube		| fa-youtube-square		| fab fa-aeyt
 
 ### social_media
 
