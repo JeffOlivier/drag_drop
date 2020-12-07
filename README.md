@@ -2,9 +2,9 @@
 
 _This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._
 
-**<font color='green'>Green</font>:** icons that have been set up with a title and URL and are live on your site<br>
-**<span style="color:red">Red</span>:** icons that have NOT been set up with either a title or URL or both<br>
-**<span style="color:blue">Blue</span>:** icons that have been set up with a title and URL but are NOT currently being used on your site
+**Green:** icons that have been set up with a title and URL and are live on your site<br>
+**Red:** icons that have NOT been set up with either a title or URL or both<br>
+**Blue:** icons that have been set up with a title and URL but are NOT currently being used on your site
 
 The **_edit_** button (icon located in the upper right hand corner of each large icon) lets you edit the social media information of each icon : the URL to your social media site (eg. FB, Insta, ect) and title of the icon.
 
