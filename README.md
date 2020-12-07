@@ -17,11 +17,7 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ### If you want to integrate this with a database, the below info will get you started
 
----
-
 ## DATABASE TABLES
-
----
 
 ### social_media_type
 
@@ -46,8 +42,6 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 [this table determins what icons are shown on what website]
 
----
-
     id - INT (primary key, auto increment)
     siteCode - CHAR(5) [code representing which site this SM icon belongs on]
     typeId - SMALLINT(6) (primary key) [maps to the table social_media_type column id]
@@ -61,8 +55,6 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 [logs all changes to the social_media table and by whom]
 
----
-
     id - INT (primary key, auto increment)
     timestamp - DATETIME [date of the change]
     username - VARCHAR(100) [person who made the change]
@@ -71,13 +63,11 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
     oldData - VARCHAR(255) [original value]
     newData - VARCHAR(255) [new value]
 
----
-
 # QUERY EXAMPLES
 
 ---
 
-## Get all active icons for the site 'foo' (eg. the icons currently shown on the website)
+### Get all active icons for the site 'foo' (eg. the icons currently shown on the website)
 
 **_note:_** _an icon order of zero indicates that it exists, but isn't shown on the website_
 
@@ -94,32 +84,32 @@ OR
 > WHERE siteCode = 'foo' AND iconOrder != 0<br>
 > ORDER BY iconOrder ASC
 
-## Get all available social media icon types
+### Get all available social media icon types
 
 > SELECT id<br>
 > FROM social_media_type<br>
 > WHERE isGlobal = true<br>
 > ORDER BY id ASC
 
-## Get all of the information for a SINGLE social media icon on the site 'foo'
+### Get all of the information for a SINGLE social media icon on the site 'foo'
 
 > SELECT \*<br>
 > FROM social_media<br>
 > WHERE siteCode = 'foo' AND typeId = 56
 
-## Get all information for a single social media icon type
+### Get all information for a single social media icon type
 
 > SELECT \*<br>
 > FROM social_media_type<br>
 > WHERE id = 3
 
-## Get the social media icon image code
+### Get the social media icon image code
 
 > SELECT fa5icon as image_code<br>
 > FROM social_media_types<br>
 > WHERE id = 3
 
-## Get the name of a social media icon (eg. facebook, instagram, etc.)
+### Get the name of a social media icon (eg. facebook, instagram, etc.)
 
 > SELECT name<br>
 > FROM social_media_type<br>
