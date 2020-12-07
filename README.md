@@ -1,4 +1,6 @@
-## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, but in one place, this is the tool for you.
+## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, then this is the tool for you.
+
+**This tool is built using _JavaScript ES6_, _jQuery_, and _SASS_.**
 
 **Green:** icons that have been set up with a title and URL and are live on your site<br>
 **Red:** icons that have NOT been set up with either a title or URL or both<br>
@@ -49,7 +51,7 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
     url - VARCHAR(255) [URL to your specific SM page eg. www.facebook.com/myCompany ]
     iconrder - TINYINT(4) [the order placement of this SM icon]
 
-    -> **unique key = (siteCode, typeId)**
+    * unique key = (siteCode, typeId)
 
 ### social_media_change_log
 
