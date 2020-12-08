@@ -1,5 +1,5 @@
 {
-  "name": "media_icons",
+  "name": "drag_drop",
   "version": "1.0.0",
   "description": "_This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JeffOlivier/media_icons.git"
+    "url": "git+https://github.com/JeffOlivier/drag_drop.git"
   },
   "author": "Jeff Olivier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JeffOlivier/media_icons/issues"
+    "url": "https://github.com/JeffOlivier/drag_drop/issues"
   },
-  "homepage": "https://github.com/JeffOlivier/media_icons#readme",
+  "homepage": "https://github.com/JeffOlivier/drag_drop#readme",
   "dependencies": {
     "express": "^4.17.1"
   }

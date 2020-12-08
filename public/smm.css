@@ -4,6 +4,31 @@ html {
   font-family: montserratsemi_bold, montserratregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* ******************************************************* */
+/* ******************************************************* */
+body {
+  margin: 0px !important;
+}
+header {
+  background-image: url("./header.jpeg"); /* The image used */
+  background-color:  #5b71cf; /* Used if the image is unavailable */
+  background-position: center 15%; /* Center the image on the Y axis and 15% from the top of the x-axis */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  padding: 10px 10px 10px 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 150%;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+/* ******************************************************* */
+/* ******************************************************* */
+
 h1 {
   text-align: center;
   font-size: 30px;
