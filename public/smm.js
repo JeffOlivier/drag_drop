@@ -81,7 +81,7 @@ $( function() {
 			$('#smGroup > .socialmedia_single_icon').each( function (index) { $(this).attr('data-order', index+1); } ); // add 1 because index is zero-based
 			
 			// Update the data-order attribute of all unused icons to be 0
-			$('#smGroup_not > .socialmedia_single_icon').each( index => { console.log($(this)); $(this).attr('data-order', 0); } );
+			$('#smGroup_not > .socialmedia_single_icon').each( index => { $(this).attr('data-order', 0); } );
 			
 			// Get the new order of the icons
 			currentIconOrder = getIconOrder(); 
