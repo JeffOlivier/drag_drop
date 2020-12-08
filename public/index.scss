@@ -1,0 +1,358 @@
+/* color definitions */
+$gradient_top: silver; //#c0c0c0
+$icons_live: darkgreen; //#006400
+$icons_not_used_with_info: cornflowerblue; //#3089e0
+$icons_not_used_no_info: maroon; //#800000
+$icon_edit: slategray; //#708090
+$info_box_border: orange; //#ffa500
+$info_box_inside: white; //antiquewhite; //#faebd7
+$button_enabled: orange; //#ffa500
+$button_disabled: gray; //#808080
+
+html {
+  background-color: antiquewhite;
+  font-family: montserratsemi_bold, montserratregular, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+.base_container {
+  width: 800px;
+  padding-left: 50px;
+  float: left;
+}
+.order_change_button {
+  float: left;
+  padding-left: 50px;
+  padding-top: 100px;
+}
+.socialmedia_outer_container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialmedia_single_icon {
+  position: relative;
+  float: left;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  background-image: linear-gradient($gradient_top, $icons_live);
+  opacity: 1;
+
+  &.error {
+    background-image: linear-gradient(
+      $gradient_top,
+      $icons_not_used_no_info
+    ) !important;
+  }
+
+  i {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+
+    /* only center the "first" social media font awesome icon (and not the next one, which is the edit icon) */
+    &:first-of-type {
+      top: 50%;
+    }
+
+    &.sm_icon_edit {
+      &:hover {
+        /* adds a gray "glow" around the edit icon */
+        box-shadow: 0 0 10px gray;
+      }
+    }
+  }
+}
+.ver1 .socialmedia_single_icon i {
+  top: 50%;
+}
+
+.notUsedIcons {
+  background-color: white;
+  border: 2px red dashed;
+
+  .socialmedia_single_icon {
+    background-image: linear-gradient($gradient_top, $icons_not_used_with_info);
+    opacity: 0.5;
+  }
+}
+
+.sm_icon_edit {
+  /* hover info box */
+  &:after {
+    background-color: $info_box_inside;
+    border: 1px solid $info_box_border;
+    content: attr(data-title) "\ahttps://"attr(data-url); /* info to populate this box with */
+    display: block;
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.7;
+    text-align: left;
+    white-space: pre-wrap;
+    opacity: 0; /* hide this info box when not part of a hover event */
+    padding: 8px;
+    pointer-events: none; /* stops the info box from appearing when hovering over this area */
+    transition: opacity 250ms linear;
+    width: max-content; //Chrome & IE
+    width: -moz-max-content; //FireFox
+    width: intrinsic; //Safari
+    min-width: 175px;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      pointer-events: inherit;
+    }
+
+    /* when hovering, show the pointerDown class */
+    ~ {
+      .pointerDown {
+        opacity: 1;
+      }
+    }
+  }
+}
+.ver1 .sm_icon_edit {
+  margin-top: -35px;
+  margin-left: 35px;
+  &:after {
+    left: -100px;
+    top: -74px;
+  }
+}
+.ver2 .sm_icon_edit {
+  top: 100%;
+  height: 2.5rem;
+  color: slategray;
+  /* make a circle around the edit icon */
+  border: 1px solid slategray;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: white;
+  &:after {
+    left: -75px;
+    top: -155px;
+  }
+}
+
+.pointerDown {
+  color: $info_box_border !important;
+  opacity: 0; /* hide this pointer and the info box when not part of a hover event */
+  pointer-events: none; /* stops the info box from appearing when hovering over this area */
+  position: absolute;
+  transition: opacity 250ms linear;
+}
+.ver1 .pointerDown {
+  margin-top: -54px;
+}
+.ver2 .pointerDown {
+  margin-top: -7px;
+}
+
+ul {
+  &.usedIcons {
+    height: 150px;
+    width: 100%;
+  }
+
+  &.notUsedIcons {
+    height: 150px;
+    width: 100%;
+  }
+
+  /* highlight the edit icon when the info is not complete */
+  /*
+		.usedIcons {
+			.error {
+				.sm_icon_edit {
+					background-color: orange;
+					border: 1px solid black;
+					color: black;
+				}
+			}
+		}
+		*/
+}
+
+.ui-dialog {
+  .ui-dialog-buttonpane {
+    .ui-dialog-buttonset {
+      .ui-button {
+        background-image: none !important;
+        border-radius: 5px !important;
+      }
+    }
+  }
+}
+
+.active_container {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notUsed_container {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.smOrderUpdateButton {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  color: black;
+
+  /* the next two lines center the button horizontally on the page */
+  margin: 0 auto;
+  display: table;
+
+  &.disable {
+    background-color: $button_disabled;
+    color: darkgray;
+  }
+
+  &.enable {
+    background-color: $button_enabled;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+.ui-dialog {
+  padding: 20px !important;
+  background-color: white;
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+
+  .ui-dialog-titlebar {
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .ui-dialog-titlebar-close {
+    color: #949494 !important;
+    opacity: 0.65 !important;
+    position: absolute;
+    display: inline-block;
+    right: 8px;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    &:before {
+      font-family: FontAwesome;
+      content: "\f00d";
+      font-size: 18px;
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+  .ui-dialog-title {
+    text-transform: uppercase;
+  }
+
+  .ui-dialog-buttonpane {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    .ui-dialog-buttonset {
+      float: unset !important;
+      text-align: center !important;
+      padding-top: 20px;
+
+      .ui-button {
+        background-color: $button_enabled !important;
+        background-image: none !important;
+        padding: 7px 20px 7px 20px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #dialog-icon-form {
+    form {
+      margin-bottom: 0;
+    }
+  }
+  fieldset {
+    border-width: 0px;
+  }
+}
+
+.updateFormFields {
+  display: table;
+  table-layout: fixed;
+}
+
+.updateFormLabel {
+  display: table-cell;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+
+  span {
+    font-family: monospace;
+  }
+}
+
+.updateFormInput {
+  display: table-cell;
+  white-space: nowrap;
+  width: 100%;
+
+  > input {
+    width: 100%;
+  }
+}
+
+.sm_icon_edit[data-title=""] {
+  &:after {
+    content: "title has not been set\ahttps://"attr(data-url);
+  }
+}
+
+.sm_icon_edit[data-url=""] {
+  &:after {
+    content: attr(data-title) "\aurl has not been set";
+  }
+}
+
+.sm_icon_edit[data-title=""][data-url=""] {
+  &:after {
+    content: "title has not been set\Aurl has not been set";
+  }
+}
+
+/* gray out the background when the form dialog is open */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: none !important;
+  background-color: #fff !important;
+  opacity: 0.7 !important;
+}
+
+.clearMe {
+  clear: both;
+}

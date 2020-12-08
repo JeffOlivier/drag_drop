@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Social Media Icon Management"
+        />
+        <title>Jeff Codes | Social Media Icon Management</title>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="./index.js"></script>
+    </head>
+    <body>
+        <h1>Social Media Icon Management</h1>
+
+        <div class="base_container">
+
+            <!-- Container to hold all of the active social media icons -->
+            <div class="clearMe active_container ver1">
+                <ul id="smGroup" class="usedIcons socialmedia_outer_container ui-sortable">
+                    <li id="socialtypeid_1" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="1" data-sitecode="US" data-typeid="1" data-typename="facebook">
+                        <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Facebook" data-url="www.facebook.com/jeff"></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </li>
+                    
+                    <li id="socialtypeid_2" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="2" data-sitecode="US" data-typeid="2" data-typename="google+">
+                        <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Google+" data-url="plus.google.com/+jeff"></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </li>
+                    
+                    <li id="socialtypeid_3" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="3" data-sitecode="US" data-typeid="6" data-typename="twitter">
+                        <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Twitter" data-url="twitter.com/jeff"></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+
+                    </li>
+                    
+                    <li id="socialtypeid_4" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="4" data-sitecode="US" data-typeid="3" data-typename="instagram">
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Instagram" data-url="www.instagram.com/jeff/"></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Container to hold all of the social media icons NOT USED -->
+            <div class="clearMe notUsed_container ver1">
+                ICONS THAT ARE NOT BEING USED
+                <ul id="smGroup_not" class="clearMe notUsedIcons socialmedia_outer_container ui-sortable">
+                    <li id="ae_smtypeid_5" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle" data-order="0" data-sitecode="US" data-typeid="5" data-typename="pinterest">
+                        <i class="fa fa-pinterest-square fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Pinterest" data-url="www.pinterest.com/jeff"></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </li>
+                    
+                    <li id="ae_smtypeid_8" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle error" data-order="0" data-sitecode="US" data-typeid="8" data-typename="youtube">
+                        <i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i>
+                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="" data-url=""></i>
+                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+        
+        </div><!-- /base_container -->
+
+
+        <div class="order_change_button">
+            <button type="submit" id="submitNewIconOrder" class="smOrderUpdateButton disable" value="update">Save Icon Order</button>
+        </div>
+
+        <div class="clearMe"></div>
+
+        <!-- MODAL: The "Update a Single Icon" form used in a dialog modal -->
+        <div id="dialog-icon-form" class="" title="Edit Icon">
+            <form id="update-icon-form">
+                <fieldset>
+                    <div class="updateFormFields">
+                        <div class="updateFormLabel">TITLE:&nbsp;</div>
+                        <div class="updateFormInput"><input type="text" name="sm_title" id="sm_title" value="" class=""></div>
+                    </div>
+                    <br>
+                    <div class="updateFormFields clearMe">
+                        <div class="updateFormLabel">URL: <span class="">https://</span></div>
+                        <div class="updateFormInput"><input type="text" name="sm_url" id="sm_url" value="" class="ui-corner-all"></div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

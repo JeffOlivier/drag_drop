@@ -1,0 +1,358 @@
+/* color definitions */
+html {
+  background-color: antiquewhite;
+  font-family: montserratsemi_bold, montserratregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.base_container {
+  width: 800px;
+  padding-left: 50px;
+  float: left;
+}
+
+.order_change_button {
+  float: left;
+  padding-left: 50px;
+  padding-top: 100px;
+}
+
+.socialmedia_outer_container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialmedia_single_icon {
+  position: relative;
+  float: left;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(silver), to(darkgreen));
+  background-image: linear-gradient(silver, darkgreen);
+  opacity: 1;
+}
+
+.socialmedia_single_icon.error {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(silver), to(maroon)) !important;
+  background-image: linear-gradient(silver, maroon) !important;
+}
+
+.socialmedia_single_icon i {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: black;
+  /* only center the "first" social media font awesome icon (and not the next one, which is the edit icon) */
+}
+
+.socialmedia_single_icon i:first-of-type {
+  top: 50%;
+}
+
+.socialmedia_single_icon i.sm_icon_edit:hover {
+  /* adds a gray "glow" around the edit icon */
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
+}
+
+.ver1 .socialmedia_single_icon i {
+  top: 50%;
+}
+
+.notUsedIcons {
+  background-color: white;
+  border: 2px red dashed;
+}
+
+.notUsedIcons .socialmedia_single_icon {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(silver), to(cornflowerblue));
+  background-image: linear-gradient(silver, cornflowerblue);
+  opacity: 0.5;
+}
+
+.sm_icon_edit {
+  /* hover info box */
+}
+
+.sm_icon_edit:after {
+  background-color: white;
+  border: 1px solid orange;
+  content: attr(data-title) "\ahttps://" attr(data-url);
+  /* info to populate this box with */
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-wrap;
+  opacity: 0;
+  /* hide this info box when not part of a hover event */
+  padding: 8px;
+  pointer-events: none;
+  /* stops the info box from appearing when hovering over this area */
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+  width: -webkit-max-content;
+  width: max-content;
+  width: -moz-max-content;
+  width: intrinsic;
+  min-width: 175px;
+}
+
+.sm_icon_edit:hover {
+  /* when hovering, show the pointerDown class */
+}
+
+.sm_icon_edit:hover:after {
+  opacity: 1;
+  pointer-events: inherit;
+}
+
+.sm_icon_edit:hover ~ .pointerDown {
+  opacity: 1;
+}
+
+.ver1 .sm_icon_edit {
+  margin-top: -35px;
+  margin-left: 35px;
+}
+
+.ver1 .sm_icon_edit:after {
+  left: -100px;
+  top: -74px;
+}
+
+.ver2 .sm_icon_edit {
+  top: 100%;
+  height: 2.5rem;
+  color: slategray;
+  /* make a circle around the edit icon */
+  border: 1px solid slategray;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: white;
+}
+
+.ver2 .sm_icon_edit:after {
+  left: -75px;
+  top: -155px;
+}
+
+.pointerDown {
+  color: orange !important;
+  opacity: 0;
+  /* hide this pointer and the info box when not part of a hover event */
+  pointer-events: none;
+  /* stops the info box from appearing when hovering over this area */
+  position: absolute;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.ver1 .pointerDown {
+  margin-top: -54px;
+}
+
+.ver2 .pointerDown {
+  margin-top: -7px;
+}
+
+ul {
+  /* highlight the edit icon when the info is not complete */
+  /*
+		.usedIcons {
+			.error {
+				.sm_icon_edit {
+					background-color: orange;
+					border: 1px solid black;
+					color: black;
+				}
+			}
+		}
+		*/
+}
+
+ul.usedIcons {
+  height: 150px;
+  width: 100%;
+}
+
+ul.notUsedIcons {
+  height: 150px;
+  width: 100%;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
+  background-image: none !important;
+  border-radius: 5px !important;
+}
+
+.active_container {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notUsed_container {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.smOrderUpdateButton {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  color: black;
+  /* the next two lines center the button horizontally on the page */
+  margin: 0 auto;
+  display: table;
+}
+
+.smOrderUpdateButton.disable {
+  background-color: gray;
+  color: darkgray;
+}
+
+.smOrderUpdateButton.enable {
+  background-color: orange;
+  -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+}
+
+.ui-dialog {
+  padding: 20px !important;
+  background-color: white;
+  -webkit-box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  color: #949494 !important;
+  opacity: 0.65 !important;
+  position: absolute;
+  display: inline-block;
+  right: 8px;
+  top: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:before {
+  font-family: FontAwesome;
+  content: "\f00d";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ui-dialog .ui-dialog-title {
+  text-transform: uppercase;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: unset !important;
+  text-align: center !important;
+  padding-top: 20px;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
+  background-color: orange !important;
+  background-image: none !important;
+  padding: 7px 20px 7px 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ui-dialog #dialog-icon-form form {
+  margin-bottom: 0;
+}
+
+.ui-dialog fieldset {
+  border-width: 0px;
+}
+
+.updateFormFields {
+  display: table;
+  table-layout: fixed;
+}
+
+.updateFormLabel {
+  display: table-cell;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.updateFormLabel span {
+  font-family: monospace;
+}
+
+.updateFormInput {
+  display: table-cell;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.updateFormInput > input {
+  width: 100%;
+}
+
+.sm_icon_edit[data-title=""]:after {
+  content: "title has not been set\ahttps://" attr(data-url);
+}
+
+.sm_icon_edit[data-url=""]:after {
+  content: attr(data-title) "\aurl has not been set";
+}
+
+.sm_icon_edit[data-title=""][data-url=""]:after {
+  content: "title has not been set\Aurl has not been set";
+}
+
+/* gray out the background when the form dialog is open */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: none !important;
+  background-color: #fff !important;
+  opacity: 0.7 !important;
+}
+
+.clearMe {
+  clear: both;
+}
+/*# sourceMappingURL=index.css.map */

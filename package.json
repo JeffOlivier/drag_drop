@@ -1,0 +1,22 @@
+{
+  "name": "media_icons",
+  "version": "1.0.0",
+  "description": "_This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffOlivier/media_icons.git"
+  },
+  "author": "Jeff Olivier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffOlivier/media_icons/issues"
+  },
+  "homepage": "https://github.com/JeffOlivier/media_icons#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
