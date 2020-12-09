@@ -1,5 +1,5 @@
 {
-  "name": "drag_drop",
+  "name": "drag_drop_icon",
   "version": "1.0.0",
   "description": "_This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JeffOlivier/drag_drop.git"
+    "url": "git+https://github.com/JeffOlivier/drag_drop_icons.git"
   },
   "author": "Jeff Olivier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JeffOlivier/drag_drop/issues"
+    "url": "https://github.com/JeffOlivier/drag_drop_icons/issues"
   },
-  "homepage": "https://github.com/JeffOlivier/drag_drop#readme",
+  "homepage": "https://github.com/JeffOlivier/drag_drop_icons#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
