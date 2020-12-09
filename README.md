@@ -16,8 +16,8 @@ _This tool is built using the following:_
 
 ## How to use this app
 
-**Green:** icons that have been set up with a title and URL and are live on your site<br>
-**Red:** icons that have NOT been set up with either a title or URL or both<br>
+**Green:** icons that have been set up with a title and URL and are live on your site\
+**Red:** icons that have NOT been set up with either a title or URL or both\
 **Blue:** icons that have been set up with a title and URL but are NOT currently being used on your site
 
 - Each icon has an **_edit_** button (sm icon located in the upper right hand corner of each large icon) that lets you edit the title and URL to your social media site (eg. FB, Insta, ect).
@@ -38,7 +38,7 @@ _This tool is built using the following:_
 
 #### social_media_type
 
-[this table contains all of the social media types that are available]
+_This table contains all of the social media types that are available_
 
     id - SMALLINT(6) (primary key)
     name - char(100) (unique key)
@@ -57,7 +57,7 @@ _This tool is built using the following:_
 
 #### social_media
 
-[this table determins what icons are shown on what website]
+_This table determins what icons are shown on what website_
 
     id - INT (primary key, auto increment)
     siteCode - CHAR(5) [code representing which site this SM icon belongs on]
@@ -70,7 +70,7 @@ _This tool is built using the following:_
 
 #### social_media_change_log
 
-[this table logs all changes to the social_media table and by whom]
+_This table logs all changes to the social_media table and by whom_
 
     id - INT (primary key, auto increment)
     timestamp - DATETIME [date of the change]
@@ -90,46 +90,46 @@ _This tool is built using the following:_
 
 **_note:_** _an icon order of zero indicates that it exists, but isn't shown on the website_
 
-> SELECT id<br>
-> FROM social_media<br>
-> WHERE sitecode = 'foo' AND iconOrder != 0<br>
+> SELECT id\
+> FROM social_media\
+> WHERE sitecode = 'foo' AND iconOrder != 0\
 > ORDER BY iconOrder DESC
 
 OR
 
-> SELECT typeId, title, url, iconOrder, name<br>
-> FROM social_media AS a<br>
-> JOIN social_media_type AS b ON b.id = a.typeId<br>
-> WHERE siteCode = 'foo' AND iconOrder != 0<br>
+> SELECT typeId, title, url, iconOrder, name\
+> FROM social_media AS a\
+> JOIN social_media_type AS b ON b.id = a.typeId\
+> WHERE siteCode = 'foo' AND iconOrder != 0\
 > ORDER BY iconOrder ASC
 
 #### Get all of the available social media icon types
 
-> SELECT id<br>
-> FROM social_media_type<br>
-> WHERE isGlobal = true<br>
+> SELECT id\
+> FROM social_media_type\
+> WHERE isGlobal = true\
 > ORDER BY id ASC
 
 #### Get all of the information for a _SINGLE_ social media icon on the site named 'foo'
 
-> SELECT \*<br>
-> FROM social_media<br>
+> SELECT \*\
+> FROM social_media\
 > WHERE siteCode = 'foo' AND typeId = 56
 
 #### Get all of the information for a single social media icon type
 
-> SELECT \*<br>
-> FROM social_media_type<br>
+> SELECT \*\
+> FROM social_media_type\
 > WHERE id = 3
 
 #### Get the URL for the social media icon image
 
-> SELECT fa5icon as image_code<br>
-> FROM social_media_types<br>
+> SELECT fa5icon as image_code\
+> FROM social_media_types\
 > WHERE id = 3
 
 #### Get the name of a social media icon (eg. facebook, instagram, etc.)
 
-> SELECT name<br>
-> FROM social_media_type<br>
+> SELECT name\
+> FROM social_media_type\
 > WHERE id = 3
