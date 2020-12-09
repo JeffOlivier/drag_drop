@@ -12,7 +12,7 @@ _This tool is built using the following:_
 - jQuery's _sortable_ and _dialog_
 - Modular Sass
 
-[Working Demo]http://dragdropicons.jeffolivier.codes
+[Working Demo](http://dragdropicons.jeffolivier.codes)
 
 ## How to use this app
 
