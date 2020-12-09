@@ -1,6 +1,26 @@
+# Drag & Drop (Social Media Icons)
+
+![Page Image](./public/images/dragdrop_icons.png)
+
+## Purpose
+
+This is an app I created as a proof of concept to demonstrate the use of:</p>
+
+_This tool is built using the following:_
+
+- JavaScript ES6
+- jQuery's _sortable_ and _dialog_
+- Modular Sass
+
+## Working Demo
+
+http://dragdropicons.jeffolivier.codes
+
 ## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, then this is the tool for you.
 
 _This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._
+
+## How to use this app
 
 **Green:** icons that have been set up with a title and URL and are live on your site<br>
 **Red:** icons that have NOT been set up with either a title or URL or both<br>
@@ -17,11 +37,11 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ---
 
-### If you want to integrate this with a database, then the below information will get you started
+## Integrate this with a database
 
-## DATABASE TABLES
+### DATABASE TABLES
 
-### social_media_type
+#### social_media_type
 
 [this table contains all of the social media types that are available]
 
@@ -40,7 +60,7 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 | Twitter   | fa-twitter-square     | fab fa-aetw |
 | YouTube   | fa-youtube-square     | fab fa-aeyt |
 
-### social_media
+#### social_media
 
 [this table determins what icons are shown on what website]
 
@@ -53,7 +73,7 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
     * unique key = (siteCode, typeId)
 
-### social_media_change_log
+#### social_media_change_log
 
 [this table logs all changes to the social_media table and by whom]
 
@@ -67,11 +87,11 @@ The **_Save Order_** button only becomes **_active_** when there is an actual ch
 
 ---
 
-# QUERY EXAMPLES
+### QUERY EXAMPLES
 
 ---
 
-### Get all of the active icons for the site named 'foo' (eg. the icons currently being shown on the website)
+#### Get all of the active icons for the site named 'foo' (eg. the icons currently being shown on the website)
 
 **_note:_** _an icon order of zero indicates that it exists, but isn't shown on the website_
 
@@ -88,32 +108,32 @@ OR
 > WHERE siteCode = 'foo' AND iconOrder != 0<br>
 > ORDER BY iconOrder ASC
 
-### Get all of the available social media icon types
+#### Get all of the available social media icon types
 
 > SELECT id<br>
 > FROM social_media_type<br>
 > WHERE isGlobal = true<br>
 > ORDER BY id ASC
 
-### Get all of the information for a _SINGLE_ social media icon on the site named 'foo'
+#### Get all of the information for a _SINGLE_ social media icon on the site named 'foo'
 
 > SELECT \*<br>
 > FROM social_media<br>
 > WHERE siteCode = 'foo' AND typeId = 56
 
-### Get all of the information for a single social media icon type
+#### Get all of the information for a single social media icon type
 
 > SELECT \*<br>
 > FROM social_media_type<br>
 > WHERE id = 3
 
-### Get the URL for the social media icon image
+#### Get the URL for the social media icon image
 
 > SELECT fa5icon as image_code<br>
 > FROM social_media_types<br>
 > WHERE id = 3
 
-### Get the name of a social media icon (eg. facebook, instagram, etc.)
+#### Get the name of a social media icon (eg. facebook, instagram, etc.)
 
 > SELECT name<br>
 > FROM social_media_type<br>
