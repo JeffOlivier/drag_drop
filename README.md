@@ -1,10 +1,10 @@
-# Drag & Drop (Social Media Icons)
+# Drag & Drop 1 - Social Media Icon Manager
 
 ![Page Image](./public/images/dragdrop_icons.png)
 
 ## Purpose
 
-This is an app I created as a proof of concept to demonstrate the use of:</p>
+This is an app I created to demonstrate a proof of concept for a former employer (who is currently using it). My former employer is a multilingual international company with close to 70 different versions of their website to represent the country the user is coming from. Each country's version of the website has different social media sites and each website needs the ability to have them in different orders. This information was hardcoded which required the marketing department to submit a change request to make simple changes. I solved this by creating this **_Social Media Icon Manager_**, a very easy to use tool that allows the marketing department to make changes at their leisure. To keep the integrity of the production site, a logging table was added to keep track of all changes and by whom.
 
 _This tool is built using the following:_
 
@@ -16,24 +16,21 @@ _This tool is built using the following:_
 
 http://dragdropicons.jeffolivier.codes
 
-## If you have multiple websites, but want to have one tool to manage the social media info for each of them separately, then this is the tool for you.
-
-_This tool is built using **JavaScript ES6**, **jQuery**, and **SASS**._
-
 ## How to use this app
 
 **Green:** icons that have been set up with a title and URL and are live on your site<br>
 **Red:** icons that have NOT been set up with either a title or URL or both<br>
 **Blue:** icons that have been set up with a title and URL but are NOT currently being used on your site
 
-The **_edit_** button (icon located in the upper right hand corner of each large icon) lets you edit the social media information of each icon : the URL to your social media site (eg. FB, Insta, ect) and title of the icon.
-
-The **_Save Order_** button only becomes **_active_** when there is an actual change to be saved.
-
+- Each icon has an **_edit_** button (sm icon located in the upper right hand corner of each large icon) that lets you edit the title and URL to your social media site (eg. FB, Insta, ect).
 - You can rearrange the order that the icons are shown in, then hit save
 - You can move an icon that is being used to the white box to remove it from being seen on your website
 - You can add a new icon to your website by grabbing a red one in the white area and moving it inline with the green icons
+- The **_Save Order_** button only becomes **_active_** when there is an actual change to be saved
+- **_Red_** icons indicate that it is missing a title or URL or both
+- You can not save the order of the icons while there is a **_red_** icon present
 - You can edit the URL and title of each individual icon
+- This tool was not designed for use on a mobile device
 
 ---
 
