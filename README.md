@@ -10,20 +10,20 @@ _This tool is built using the following:_
 
 - JavaScript ES6
 - jQuery's _sortable_ and _dialog_
-- Modular Sass
+- Sass
 
 [Working Demo](http://dragdropicons.jeffolivier.codes)
 
 ## How to use this app
 
-**Green:** icons that have been set up with a title and URL and are live on your site\
-**Red:** icons that have NOT been set up with either a title or URL or both\
-**Blue:** icons that have been set up with a title and URL but are NOT currently being used on your site
+**Green icons** are ones that have been set up with a title and URL and are live on your site\
+**Red icons** are ones that have NOT been set up with either a title or URL or both\
+**Blue icons** are ones that have been set up with a title and URL but are NOT currently being used on your site
 
-- Each icon has an **_edit_** button (sm icon located in the upper right hand corner of each large icon) that lets you edit the title and URL to your social media site (eg. FB, Insta, ect).
-- You can rearrange the order that the icons are shown in, then hit save
-- You can move an icon that is being used to the white box to remove it from being seen on your website
-- You can add a new icon to your website by grabbing a red one in the white area and moving it inline with the green icons
+- You can update an icon's title and URL by clicking on the small icon located in the upper right hand corner
+- Rearrange the order that the icons are shown in, then hit save
+- Move an icon that is being used to the white box to remove it from being seen on your website
+- Add a new icon to your active list by moving a **_red_** one from the white inline with the **_green_** icons
 - The **_Save Order_** button only becomes **_active_** when there is an actual change to be saved
 - **_Red_** icons indicate that it is missing a title or URL or both
 - You can not save the order of the icons while there is a **_red_** icon present
