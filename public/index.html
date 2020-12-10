@@ -16,101 +16,155 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="./dd_icons.js"></script>
     </head>
+
     <body>
-        <header>
-            <style>
-                header { background-image: url("./images/header.jpeg");
-                    background-position: center 15%; background-repeat: no-repeat; background-size: cover;
-                    padding: 10px 10px 10px 20px;
-                    color: white; font-weight: bold; text-align: left; font-family: sans-serif; font-size: 150%;
-                }
-                header a { color: white; text-decoration: none; }
-                @media only screen and (max-width: 800px) {
-                    header { background-position: right; }
-                }
-                @media only screen and (max-width: 700px) {
-                    header { padding: 10px; }
-                }
-            </style>
-            <div class="name"><a href='http://www.jeffolivier.codes' title='HOME'>&lt;Jeff Olivier Codes /&gt;</a></div>
-        </header>
+        <div class="pageWrapper">
+            <header>
+                <style>
+                    header { background-image: url("./images/header.jpeg");
+                        background-position: center 15%; background-repeat: no-repeat; background-size: cover;
+                        padding: 10px 10px 10px 20px;
+                        color: white; font-weight: bold; text-align: left; font-family: sans-serif; font-size: 150%;
+                    }
+                    header a { color: white; text-decoration: none; }
+                    @media only screen and (max-width: 800px) {
+                        header { background-position: right; }
+                    }
+                    @media only screen and (max-width: 700px) {
+                        header { padding: 10px; }
+                    }
+                </style>
+                <div class="name"><a href='http://www.jeffolivier.codes' title='HOME'>&lt;Jeff Olivier Codes /&gt;</a></div>
+            </header>
 
-        <h1>Drag &amp; Drop Social Media Manager</h1>
+            <div class="pageContent">
+                <div class="menuContainer">
+                    <div id="purpose" class="menuItemContainer">
+                        <div class="menuItem purpose">PURPOSE <i class="arrow fa fa-chevron-right" aria-hidden="true"></i></div>
+                        <div class="menuItemInfoContainer">
+                            <h3>PURPOSE OF THIS APP</h3>
+                            <p>This is an app I created to demonstrate a proof of concept for a former employer (who is currently using it). My 
+                            former employer is a multilingual international company with close to 70 different versions of their website to represent
+                            the country the user is coming from. Each country's version of the website has different social media sites and each
+                            website needs the ability to have them in different orders. This information was hardcoded which required the marketing
+                            department to submit a change request to make simple changes. I solved this by creating this <span class="emp">Social Media Icon Manager</span>,
+                            a very easy to use tool that allows the marketing department to make changes at their leisure. To keep the integrity of the
+                            production site, a logging table was added to keep track of all changes and by whom.</p>
 
-        <div class="base_container">
+                            <div class="emp">This tool is built using the following:</div>
+                            <li>JavaScript ES6</li>
+                            <li>jQuery's sortable and dialog</li>
+                            <li>Sass</li>
+                        </div>
+                    </div>
 
-            <!-- Container to hold all of the active social media icons -->
-            <div class="clearMe active_container ver1">
-                <ul id="smGroup" class="usedIcons socialmedia_outer_container ui-sortable">
-                    <li id="socialtypeid_1" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="1" data-sitecode="US" data-typeid="1" data-typename="facebook">
-                        <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Facebook" data-url="www.facebook.com/jeff"></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
-                    </li>
+                    <div id="howToUse" class="menuItemContainer">
+                        <div class="menuItem howToUse">HOW TO USE <i class="arrow fa fa-chevron-right" aria-hidden="true"></i></div>
+                        <div class="menuItemInfoContainer">
+                            <h3>HOW TO USE THIS APP</h3>
+                            <p>
+                                <span class="greenMe">Green icons</span> are ones that have been set up with a title and URL and are live on your site<br>
+                                <span class="redMe">Red icons</span> are ones that have NOT been set up with either a title or URL or both<br>
+                                <span class="blueMe">Blue icons</span> are ones that have been set up with a title and URL but are NOT currently being used on your site
+                            </p>
+                            <p>
+                                
+                                <li>You can update an icon's title and URL by clicking on the small icon located in the upper right hand corner</li>
+                                <li>Rearrange the order that the icons are shown in, then hit save</li>
+                                <li>Move an icon that is being used to the white box to remove it from being seen on your website</li>
+                                <li>Add a new icon to your active list by moving a <span class="emp redMe">red</span> one from the white inline with the <span class="emp greenMe">green</span> icons</li>
+                                <li>The <span class="emp">Save Order</span> button only becomes <span class="emp">active</span> when there is an actual change to be saved</li>
+                                <li><span class="emp redMe">Red</span> icons indicate that it is missing a title or URL or both</li>
+                                <li>You can not save the order of the icons while there is a <span class="emp redMe">red</span> icon present</li>
+                                <li>You can edit the URL and title of each individual icon</li>
+                                <li>This tool was not designed for use on a mobile device</li>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="menuItem"><a href='https://github.com/JeffOlivier/drag_drop_icons' target='_blank' rel='noreferrer' title='drag_drop_icons on GitHub'><i class="fa fa-github" aria-hidden="true"></i> <i class="fa fa-code-fork" aria-hidden="true"></i> GitHub REPO</a></div>
+                </div>
+
+                <div class="projectContainer">
+                    <h1>Drag &amp; Drop Social Media Manager</h1>
+
+                    <div class="base_container">
+
+                        <!-- Container to hold all of the active social media icons -->
+                        <div class="clearMe active_container ver1">
+                            <ul id="smGroup" class="usedIcons socialmedia_outer_container ui-sortable">
+                                <li id="socialtypeid_1" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="1" data-sitecode="US" data-typeid="1" data-typename="facebook">
+                                    <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Facebook" data-url="www.facebook.com/jeff"></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                                </li>
+                                
+                                <li id="socialtypeid_2" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="2" data-sitecode="US" data-typeid="2" data-typename="google+">
+                                    <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Google+" data-url="plus.google.com/+jeff"></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                                </li>
+                                
+                                <li id="socialtypeid_3" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="3" data-sitecode="US" data-typeid="6" data-typename="twitter">
+                                    <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Twitter" data-url="twitter.com/jeff"></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+
+                                </li>
+                                
+                                <li id="socialtypeid_4" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="4" data-sitecode="US" data-typeid="3" data-typename="instagram">
+                                    <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Instagram" data-url="www.instagram.com/jeff/"></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Container to hold all of the social media icons NOT USED -->
+                        <div class="clearMe notUsed_container ver1">
+                            ICONS THAT ARE NOT BEING USED
+                            <ul id="smGroup_not" class="clearMe notUsedIcons socialmedia_outer_container ui-sortable">
+                                <li id="ae_smtypeid_5" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle" data-order="0" data-sitecode="US" data-typeid="5" data-typename="pinterest">
+                                    <i class="fa fa-pinterest-square fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Pinterest" data-url="www.pinterest.com/jeff"></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                                </li>
+                                
+                                <li id="ae_smtypeid_8" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle error" data-order="0" data-sitecode="US" data-typeid="8" data-typename="youtube">
+                                    <i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i>
+                                    <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="" data-url=""></i>
+                                    <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
                     
-                    <li id="socialtypeid_2" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="2" data-sitecode="US" data-typeid="2" data-typename="google+">
-                        <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Google+" data-url="plus.google.com/+jeff"></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
-                    </li>
-                    
-                    <li id="socialtypeid_3" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="3" data-sitecode="US" data-typeid="6" data-typename="twitter">
-                        <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Twitter" data-url="twitter.com/jeff"></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </div><!-- /base_container -->
 
-                    </li>
-                    
-                    <li id="socialtypeid_4" class="ui-state-default socialmedia_single_icon ui-sortable-handle" data-order="4" data-sitecode="US" data-typeid="3" data-typename="instagram">
-                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Instagram" data-url="www.instagram.com/jeff/"></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+                    <div class="order_change_button">
+                        <button type="submit" id="submitNewIconOrder" class="smOrderUpdateButton disable" value="update">Save Icon Order</button>
+                    </div>
+
+                    <div class="clearMe"></div>
+
+                    <!-- MODAL: The "Update a Single Icon" form used in a dialog modal -->
+                    <div id="dialog-icon-form" class="" title="Edit Icon">
+                        <form id="update-icon-form">
+                            <fieldset>
+                                <div class="updateFormFields">
+                                    <div class="updateFormLabel">TITLE:&nbsp;</div>
+                                    <div class="updateFormInput"><input type="text" name="sm_title" id="sm_title" value="" class=""></div>
+                                </div>
+                                <br>
+                                <div class="updateFormFields clearMe">
+                                    <div class="updateFormLabel">URL: <span class="">https://</span></div>
+                                    <div class="updateFormInput"><input type="text" name="sm_url" id="sm_url" value="" class="ui-corner-all"></div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <!-- Container to hold all of the social media icons NOT USED -->
-            <div class="clearMe notUsed_container ver1">
-                ICONS THAT ARE NOT BEING USED
-                <ul id="smGroup_not" class="clearMe notUsedIcons socialmedia_outer_container ui-sortable">
-                    <li id="ae_smtypeid_5" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle" data-order="0" data-sitecode="US" data-typeid="5" data-typename="pinterest">
-                        <i class="fa fa-pinterest-square fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="Follow Jeff on Pinterest" data-url="www.pinterest.com/jeff"></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
-                    </li>
-                    
-                    <li id="ae_smtypeid_8" class="ui-state-default socialmedia_single_icon notUsedIcon ui-sortable-handle error" data-order="0" data-sitecode="US" data-typeid="8" data-typename="youtube">
-                        <i class="fa fa-youtube-square fa-3x" aria-hidden="true"></i>
-                        <i class="sm_icon_edit fa fa-pencil-square-o" aria-hidden="true" data-title="" data-url=""></i>
-                        <i class="pointerDown fa fa-caret-down fa-2x" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
-        
-        </div><!-- /base_container -->
-
-
-        <div class="order_change_button">
-            <button type="submit" id="submitNewIconOrder" class="smOrderUpdateButton disable" value="update">Save Icon Order</button>
-        </div>
-
-        <div class="clearMe"></div>
-
-        <!-- MODAL: The "Update a Single Icon" form used in a dialog modal -->
-        <div id="dialog-icon-form" class="" title="Edit Icon">
-            <form id="update-icon-form">
-                <fieldset>
-                    <div class="updateFormFields">
-                        <div class="updateFormLabel">TITLE:&nbsp;</div>
-                        <div class="updateFormInput"><input type="text" name="sm_title" id="sm_title" value="" class=""></div>
-                    </div>
-                    <br>
-                    <div class="updateFormFields clearMe">
-                        <div class="updateFormLabel">URL: <span class="">https://</span></div>
-                        <div class="updateFormInput"><input type="text" name="sm_url" id="sm_url" value="" class="ui-corner-all"></div>
-                    </div>
-                </fieldset>
-            </form>
         </div>
     </body>
 </html>
